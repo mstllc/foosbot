@@ -1,3 +1,6 @@
+// Load env variables for dev
+require('dotenv').config()
+
 const express = require('express')
 const bodyParser = require('body-parser')
 
@@ -11,11 +14,15 @@ app.use(routes)
 
 async function run() {
   try {
+    // Find the channel where games will be organized before starting server
     const { channels } = await bot.channels.list()
-    const channel = channels.find(channel => channel.name === 'foosball')
-    if (channel) {
-      global.channelId = channel.id
+    const channel = channels.find(channel => channel.name === process.env.FOOSBOT_CHANNEL_NAME)
 
+    if (channel) {
+      // Store found channel id as a global variable (it's just easy)
+      global.FOOSBOT_CHANNEL_ID = channel.id
+
+      // Start web server
       app.listen(3000, () => {
         console.log('Foosbot listening at 127.0.0.1:3000')
       })
