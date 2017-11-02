@@ -1,0 +1,12 @@
+{
+  "name": "foosbot",
+  "version": "1.0.0",
+  "description": "Slack bot for organizing foosball matches",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/client": "^3.14.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
