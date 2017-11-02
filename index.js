@@ -27,7 +27,7 @@ async function run() {
         console.log('Foosbot listening at 127.0.0.1:3000')
       })
     } else {
-      console.log('Error', 'Cant find channel named `foosball`')
+      console.log('Error', `Cant find channel named '${process.env.FOOSBOT_CHANNEL_NAME}'`)
     }
   } catch (error) {
     console.log('Error getting `foosball` channel id', error)
