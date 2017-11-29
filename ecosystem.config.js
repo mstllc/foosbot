@@ -29,7 +29,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:thorsonmscott/foosbot.git',
       path : '/home/mst/foosbot',
-      'post-deploy' : 'yarn install && pm2 reload ecosystem.config.js --env production'
+      'post-deploy' : 'yarn install && pm2 reload ecosystem.config.js --env production --update-env'
     }
   }
 };
